@@ -1,0 +1,75 @@
+@use '../../../styles/variables' as vars;
+
+.contacts-card {
+  &__container {
+    width: 100%;
+    color: vars.$color-text;
+    background-color: vars.$color-primary;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: vars.$font-size-large;
+      color: vars.$color-primary-light;
+      margin-bottom: 20px;
+    }
+  }
+  &__username {
+    top: 0;
+    left: 100%;
+    position: absolute;
+    transform-origin: left top;
+    transform: rotate(90deg);
+    background-color: vars.$color-primary-dark;
+    padding: 20px;
+
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    &:focus {
+      border: 1px solid vars.$color-primary-dark;
+      outline: none;
+    }
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 5px;
+      background-color: vars.$color-primary-dark;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    background: center center / cover no-repeat;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  &__info {
+    display: flex;
+    flex-shrink: 0;
+    li {
+      margin-bottom: 20px;
+      span {
+        color: vars.$color-primary-light;
+        margin-right: 5px;
+      }
+    }
+  }
+}
